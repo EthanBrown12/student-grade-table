@@ -1,8 +1,9 @@
 
 class App {
-  constructor() {
+  constructor(gradeTable) {
   this.handleGetGradesError = this.handleGetGradesError.bind(this);
   this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this)
+  this.gradeTable = gradeTable;
   }
 
   handleGetGradesError(error){
@@ -10,7 +11,8 @@ class App {
 }
 
   handleGetGradesSuccess(grades) {
-    console.log(grades);
+    console.log(this.gradeTable);
+    this.gradeTable.updateGrades(grades);
   }
 
    getGrades() {
@@ -20,12 +22,13 @@ class App {
       headers: {
         "X-Access-Token": "XNQfRY22"
       },
-      success: "this.handleGetGradesSuccess",
-      error: "this.handleGetGradesError"
+      success: this.handleGetGradesSuccess,
+      error: this.handleGetGradesError
     })
 
   }
    start(){
+
     this.getGrades();
    }
   }
