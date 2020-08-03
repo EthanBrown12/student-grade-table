@@ -47,11 +47,12 @@ class App {
     this.gradeForm.onSubmit(this.createGrade);
    }
 
-  createGrade(name, grade, course) {
+  createGrade(name, course, grade) {
       console.log(name, grade, course);
     $.ajax({
       url: "https://sgt.lfzprototypes.com/api/grades",
       method: "POST",
+      dataType: "JSON",
       data: {
         "name": name,
         "course":course,
