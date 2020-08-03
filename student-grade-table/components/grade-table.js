@@ -6,7 +6,7 @@ class GradeTable {
     this.updateGrades = this.updateGrades.bind(this);
   }
   updateGrades(grades) {
-      // this.tableElement.tbody.textContent = ' ';
+      this.tableElement.innerHTML="";
 
      for(var i = 0; i < grades.length; i++) {
        var row = document.createElement("tr");
@@ -16,8 +16,8 @@ class GradeTable {
        courseName.textContent = grades[i].course;
        var studentGrade = document.createElement("td");
        studentGrade.textContent = grades[i].grade;
-      row.append(studentName, courseName, studentGrade)
-      this.tableElement.append(row);
+       row.append(studentName, courseName, studentGrade)
+       this.tableElement.append(row);
 
      }
   }

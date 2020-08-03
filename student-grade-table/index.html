@@ -5,58 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js">
+
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
 
-  <div class="container">
-
-
+<div class="container">
 
 <header class="header">
   <div class="row">
- <div class="col-8">
-  <h1>Student Grade Table</h1>
-  </div>
+    <div class="col-8">
+    <h1>Student Grade Table</h1>
+    </div>
   <div class="col-4">
-  <h3 class="badge-header">Average Grade<span class="badge badge-secondary">  </span></h3>
-  </div>
+   <h3 class="badge-header">Average Grade<span class="badge badge-secondary">  </span></h3>
   </div>
 </header>
-
-<table class="table table-bordered">
-<thead class="thead-dark">
-  <tr>
-    <th scope="col">Student Name</th>
-    <th scope="col">Course</th>
-    <th scope="col">Grade</th>
-  </tr>
-</thead>
-<tbody class="tbody">
-  <!-- <tr>
-
-    <td>Tim Berners-Lee</td>
-    <td>Web Developement</td>
-    <td>100</td>
-  </tr>
-  <tr>
-    <td>Scott Bowler</td>
-    <td>Web Developement</td>
-    <td>100</td>
-  </tr>
-  <tr>
-    <td>Tim Davis</td>
-    <td>Web Developement</td>
-    <td>50</td>
-  </tr> -->
-</tbody>
-</table>
+<div class="row col-12">
+<div class="col-8 table-conatiner">
+  <table class="table table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Student Name</th>
+        <th scope="col">Course</th>
+        <th scope="col">Grade</th>
+      </tr>
+      </thead>
+      <tbody class="tbody"> </tbody>
+  </table>
+</div>
+<div class="col-4 input-side">
+  <h3>Add Grade</h3>
+  <form>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">&#xf501;</span>
+    </div>
+    <input type="text" id="name" class="name form-control" name="name" placeholder="Student Name" aria-label="Student Name" aria-describedby="basic-addon1">
   </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">&#xf51b;</span>
+    </div>
+    <input type="text" id="course" class="course form-control" name="course" placeholder="Student Course" aria-label="Student Course" aria-describedby="basic-addon1">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text fas fa-graduation-cap" id="basic-addon1">&#xf19d;</span>
+    </div>
+    <input type="text" id="grade" class="grade form-control" name="grade" placeholder="Student Grade" aria-label="Student Grade" aria-describedby="basic-addon1">
+  </div>
+
+  <button type="submit" class="add-button">add</button>
+  <button type="reset" class="cancel-button">cancel</button>
+  </form>
+</div>
+</div>
+</div>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 <script src="components/app.js"></script>
 <script src="components/grade-table.js"></script>
 <script src="components/page-header.js"></script>
+<script src="components/grade-form.js"></script>
 <script src="main.js"></script>
 
 </body>
