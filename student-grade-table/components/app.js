@@ -6,6 +6,9 @@ class App {
   this.createGrade = this.createGrade.bind(this);
   this.handleCreateGradeError = this.handleCreateGradeError.bind(this);
   this.handleCreateGradesSuccess = this.handleCreateGradesSuccess.bind(this);
+  this.deleteGrade = this.deleteGrade.bind(this);
+  this.handleDeleteGradeError = this.handleDeleteGradeError.bind(this);
+  this.handleDeleteGradesSuccess = this.handleDeleteGradesSuccess.bind(this);
   this.gradeTable = gradeTable;
   this.pageHeader = pageHeader;
   this.gradeForm = gradeForm;
@@ -47,7 +50,7 @@ class App {
     this.gradeForm.onSubmit(this.createGrade);
    }
 
-  createGrade(name, grade, course) {
+  createGrade(name, course, grade) {
       console.log(name, grade, course);
     $.ajax({
       url: "https://sgt.lfzprototypes.com/api/grades",
@@ -73,6 +76,16 @@ class App {
     this.getGrades();
   }
 
+  deleteGrade(id){
+    console.log(id);
+  }
 
+  handleDeletGradeError(error) {
+    console.log(error);
+  }
+
+  handleDeleteGradeSuccess() {
+    this.getGrades();
+  }
 
   }
